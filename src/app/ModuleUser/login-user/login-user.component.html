@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <form [formGroup]="myForm">
                 <fieldset class="border p-3">
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <label>Username</label>
                         <input type="text" name="username" class="form-control"  formControlName="username" [(ngModel)]="user.username">
                         <div class="alert alert-danger" *ngIf="myForm.controls['username'].invalid && myForm.controls['username'].touched">
