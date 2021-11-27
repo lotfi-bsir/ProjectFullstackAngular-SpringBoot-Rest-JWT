@@ -6,6 +6,11 @@ import { HeaderComponent } from './header/header.component';
 import { SlideComponent } from './slide/slide.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { SubscribeUserComponent } from './ModuleUser/subscribe-user/subscribe-user.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginUserComponent } from './ModuleUser/login-user/login-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -15,10 +20,16 @@ import { FooterComponent } from './footer/footer.component';
     SlideComponent,
     HomeComponent,
     FooterComponent,
+    SubscribeUserComponent,
+    LoginUserComponent,
+
+    
   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
