@@ -27,4 +27,11 @@ export class UserService {
    pushUser(user:UserSubscribe){
        this.users.push(user);
    }
+
+   SuppUser(user:UserSubscribe){
+     const index = this.users.indexOf(user,0);
+     if(index > -1){
+       this.users.splice(index,1);
+     }
+   }
 }

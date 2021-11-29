@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserSubscribe } from '../models/usersubscribe';
 import { UserService } from '../services/user.service';
 
@@ -11,14 +12,19 @@ import { UserService } from '../services/user.service';
 export class ListInformationUserComponent implements OnInit {
 
 users: UserSubscribe[];
-  
-  constructor(private userService: UserService) {
+
+  constructor(private route: ActivatedRoute,private userService: UserService) {
   this.users=  userService.listUser();
  }
 
   ngOnInit(): void {
-    
+ 
+  }
+  deleteUser(user:UserSubscribe){
+    console.log(user);
+    let conf=confirm("Are you sure?");
+    if(conf)
+    this.userService.SuppUser(user);
 
   }
-
 }

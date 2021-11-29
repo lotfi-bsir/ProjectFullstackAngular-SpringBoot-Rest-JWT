@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashbordForAdminComponent } from './ModuleUser/dashbord-for-admin/dashbord-for-admin.component';
 import { ListInformationUserComponent } from './ModuleUser/list-information-user/list-information-user.component';
 import { ForbiddenComponent } from './ModuleUser/security/forbidden/forbidden.component';
+import { UpdateAdminComponent } from './ModuleUser/update-admin/update-admin.component';
+
+
 
 
 
@@ -29,6 +32,9 @@ import { ForbiddenComponent } from './ModuleUser/security/forbidden/forbidden.co
     DashbordForAdminComponent,
     ListInformationUserComponent,
     ForbiddenComponent,
+    UpdateAdminComponent,
+  
+ 
    
 
      

@@ -13,8 +13,8 @@
                         <td>{{user.birthdate | date:'dd/MM/yyyy' }}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.roles}}</td>  
-                        <td><a  class="btn btn-danger" >Delete</a></td>
-                        <td><a  class="btn btn-success" >Update</a></td>                              
+                        <td><button  class="btn btn-danger" (click)="deleteUser(user)"  >Delete</button ></td>
+                         <td><a  class="btn btn-success" [routerLink]="['/updateAdmin',user.username]">Update</a></td>                             
                     </tr>
                 </tbody>
             </table>

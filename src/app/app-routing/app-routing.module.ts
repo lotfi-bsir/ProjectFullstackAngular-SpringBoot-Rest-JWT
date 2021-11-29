@@ -7,6 +7,8 @@ import { DashbordForAdminComponent } from '../ModuleUser/dashbord-for-admin/dash
 import { ListInformationUserComponent } from '../ModuleUser/list-information-user/list-information-user.component';
 import { ForbiddenComponent } from '../ModuleUser/security/forbidden/forbidden.component';
 import { ControlbyguardGuard } from '../ModuleUser/security/controlbyguard.guard';
+import { UpdateAdminComponent } from '../ModuleUser/update-admin/update-admin.component';
+
 
 const ROUTES: Routes = [
    {path : "subscribe",component: SubscribeUserComponent } ,
@@ -14,8 +16,10 @@ const ROUTES: Routes = [
    {path : "dashbord",component: DashbordForAdminComponent, canActivate:[ControlbyguardGuard]},
    {path : "listuser",component: ListInformationUserComponent },
    {path:  'forbidden', component: ForbiddenComponent},
+   {path: "updateAdmin/:id", component: UpdateAdminComponent},
+   {path: "", redirectTo: "users", pathMatch: "full" }
 
-]  
+]   
  
 @NgModule({
   declarations: [],
