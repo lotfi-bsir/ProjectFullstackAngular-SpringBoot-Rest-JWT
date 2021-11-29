@@ -751,6 +751,7 @@ ol {
 .categories__item {
 	height: 270px;
 	position: relative;
+  width: 270px
 }
 
 .categories__item h5 {
