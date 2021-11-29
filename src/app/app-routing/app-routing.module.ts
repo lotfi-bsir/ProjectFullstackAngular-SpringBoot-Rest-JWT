@@ -15,7 +15,7 @@ const ROUTES: Routes = [
    {path : "listuser",component: ListInformationUserComponent },
    {path:  'forbidden', component: ForbiddenComponent},
 
-] 
+]  
  
 @NgModule({
   declarations: [],
