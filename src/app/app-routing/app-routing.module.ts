@@ -9,7 +9,7 @@ import { ForbiddenComponent } from '../ModuleUser/security/forbidden/forbidden.c
 import { ControlbyguardGuard } from '../ModuleUser/security/controlbyguard.guard';
 
 const ROUTES: Routes = [
-  {path : "subscribe",component: SubscribeUserComponent } ,
+   {path : "subscribe",component: SubscribeUserComponent } ,
    {path : "login",component: LoginUserComponent },
    {path : "dashbord",component: DashbordForAdminComponent, canActivate:[ControlbyguardGuard]},
    {path : "listuser",component: ListInformationUserComponent },

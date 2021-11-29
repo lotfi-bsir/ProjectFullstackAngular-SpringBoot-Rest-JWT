@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserSubscribe } from '../models/usersubscribe';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -9,22 +10,15 @@ import { UserSubscribe } from '../models/usersubscribe';
 })
 export class ListInformationUserComponent implements OnInit {
 
-
-  usersubscribe : UserSubscribe [];
-  constructor() {
+users: UserSubscribe[];
+  
+  constructor(private userService: UserService) {
+  this.users=  userService.listUser();
  }
 
   ngOnInit(): void {
     
-    this.usersubscribe = [
-      {firstname:"raed",lastname:"jaidi",username:"raedjaidi",
-      birthdate: new Date("07/11/1996"),email:"raed.jaidi@esprit.tn",
-      password:"12345azer",confpass:"12345azer",roles:"ADMIN"},
 
-      {firstname:"mohamed",lastname:"jaidi",username:"mohamedjaidi",
-      birthdate: new Date("07/11/2000"),email:"mohamed.jaidi@esprit.tn",
-      password:"12345azer",confpass:"12345azer",roles:"USER"},
- ];
   }
 
 }
