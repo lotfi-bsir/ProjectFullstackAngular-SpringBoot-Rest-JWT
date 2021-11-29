@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginUserComponent } from './ModuleUser/login-user/login-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashbordForAdminComponent } from './ModuleUser/dashbord-for-admin/dashbord-for-admin.component';
+import { ListInformationUserComponent } from './ModuleUser/list-information-user/list-information-user.component';
+import { ForbiddenComponent } from './ModuleUser/security/forbidden/forbidden.component';
 
 
 
@@ -25,6 +27,8 @@ import { DashbordForAdminComponent } from './ModuleUser/dashbord-for-admin/dashb
     SubscribeUserComponent,
     LoginUserComponent,
     DashbordForAdminComponent,
+    ListInformationUserComponent,
+    ForbiddenComponent,
    
 
      

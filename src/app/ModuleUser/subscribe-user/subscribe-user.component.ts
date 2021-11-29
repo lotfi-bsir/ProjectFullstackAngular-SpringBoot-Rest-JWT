@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserSubscribe } from '../models/usersubscribe';
+
 
 @Component({
   selector: 'app-subscribe-user',
@@ -10,25 +11,15 @@ import { UserSubscribe } from '../models/usersubscribe';
 export class SubscribeUserComponent implements OnInit {
   
   myForm: FormGroup;
-
-  usersubscribe : UserSubscribe [];
-    
+  
+  
   newUserSubscribe  = new UserSubscribe();
 
 
-  constructor() {
-    this.usersubscribe = [
-         {firstname:"raed",lastname:"jaidi",username:"raedjaidi",
-         birthdate: new Date("07/11/1996"),email:"raed.jaidi@esprit.tn",
-         password:"12345azer",confpass:"12345azer",roles:"ADMIN"},
-
-         {firstname:"mohamed",lastname:"jaidi",username:"mohamedjaidi",
-         birthdate: new Date("07/11/2000"),email:"mohamed.jaidi@esprit.tn",
-         password:"12345azer",confpass:"12345azer",roles:"USER"},
-    ];
-   }
+  constructor() { }
 
   ngOnInit(): void {
+
 
     this.myForm = new FormGroup({
       'firstname': new FormControl('',Validators.required),

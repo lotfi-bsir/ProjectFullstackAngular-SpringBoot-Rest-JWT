@@ -8,7 +8,7 @@ import { UserLogin } from '../models/userlogin';
 export class AuthService {
 
   users: UserLogin[] = [
-           {"username":"raedjaidi","password":"12345azer","roles":["ADMIN"]},
+           {"username":"raedjaidi","password":"123raed","roles":["ADMIN"]},
            {"username":"raed","password":"123raed","roles":["USER"]}];
 
            public loggedUser:string;
@@ -40,6 +40,13 @@ export class AuthService {
     localStorage.removeItem('loggedUser');
     localStorage.setItem('isloggedIn',String(this.isloggedIn));
     this.router.navigate(['/login']);
+  }
+
+  isAdmin():Boolean{
+    if (!this.roles) //this.roles== undefiened
+       return false;
+    return (this.roles.indexOf('ADMIN') >-1);
+   
   }
 }
  
