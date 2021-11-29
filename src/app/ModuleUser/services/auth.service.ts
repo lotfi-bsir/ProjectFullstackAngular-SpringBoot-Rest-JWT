@@ -18,11 +18,11 @@ export class AuthService {
   constructor(private router: Router) { }
 
          SignIn(user :UserLogin):Boolean{
-        let validUser: Boolean = false;
+        let validUser: Boolean = false; 
         this.users.forEach((curUser) => {
         if(user.username=== curUser.username && user.password==curUser.password) {
         validUser = true;
-        this.loggedUser = curUser.username;
+        this.loggedUser = curUser.username;  
         this.isloggedIn = true;
         this.roles = curUser.roles;
         localStorage.setItem('loggedUser',this.loggedUser);

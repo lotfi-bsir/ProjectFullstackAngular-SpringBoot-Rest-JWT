@@ -16,7 +16,7 @@ const ROUTES: Routes = [
    {path : "dashbord",component: DashbordForAdminComponent, canActivate:[ControlbyguardGuard]},
    {path : "listuser",component: ListInformationUserComponent },
    {path:  'forbidden', component: ForbiddenComponent},
-   {path: "updateAdmin/:id", component: UpdateAdminComponent},
+   {path: "updateAdmin/:username", component: UpdateAdminComponent},
    {path: "", redirectTo: "users", pathMatch: "full" }
 
 ]   
