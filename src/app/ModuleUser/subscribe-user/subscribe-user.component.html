@@ -1,1 +1,163 @@
-<p>subscribe-user works!</p>
+
+ <div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <h1 style="text-align: center;" >Create your account  </h1>
+            <form [formGroup]="myForm" >
+                <fieldset class="border m-30">
+                    
+
+                    <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> First Name </label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="firstname" type="text" minlength="3" [(ngModel)]="newUserSubscribe.firstname"  formControlName="firstname">    
+                       <div class="alert alert-danger" *ngIf="myForm.controls['firstname'].invalid && myForm.controls['firstname'].touched">
+                        <small *ngIf="myForm.controls['firstname'].hasError('required')">Libelle required</small>
+                        <small *ngIf="myForm.controls['firstname'].hasError('minlength')">minlength is equal to 3</small>
+                        </div>                   
+                        </div>
+                      
+                    </div>
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> Last Name </label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="Lastname" type="text" minlength="3"[(ngModel)]="newUserSubscribe.lastname"  formControlName="lastname">   
+                       <div class="alert alert-danger" *ngIf="myForm.controls['lastname'].invalid && myForm.controls['lastname'].touched">
+                        <small *ngIf="myForm.controls['lastname'].hasError('required')">Libelle required</small>
+                        <small *ngIf="myForm.controls['lastname'].hasError('minlength')">minlength is equal to 3</small>
+                        </div>                     
+                        </div>
+                      </div>
+
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> UserName </label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="username" type="text" minlength="3" [(ngModel)]="newUserSubscribe.username"  formControlName="username">   
+                       <div class="alert alert-danger" *ngIf="myForm.controls['username'].invalid && myForm.controls['username'].touched">
+                        <small *ngIf="myForm.controls['username'].hasError('required')">Libelle required</small>
+                        <small *ngIf="myForm.controls['username'].hasError('minlength')">minlength is equal to 3</small>
+                        </div>                
+                        </div>
+                      </div>
+
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> BirthDate</label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="birthday" type="date" [(ngModel)]="newUserSubscribe.birthdate"  formControlName="birthday">  
+                       <span class="form-control-comment">
+                        (Ex. : 31/05/1970)
+                      </span>   
+                      <div class="alert alert-danger" *ngIf="myForm.controls['birthday'].invalid && myForm.controls['birthday'].touched">
+                        <small *ngIf="myForm.controls['birthday'].hasError('required')">BirthDate is required</small> 
+                        </div>                  
+                        </div>
+                      </div>
+                     
+                      
+              
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> Email </label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="email" type="email" placeholder="flen.benfoulen@esprit.tn" [(ngModel)]="newUserSubscribe.email"  formControlName="email">  
+                       <div class="alert alert-danger" *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+                        <small *ngIf="myForm.controls['email'].hasError('required')">Email is required</small> 
+                        </div>                     
+                        </div>
+                      </div>
+
+
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5"> Password </label>
+                        <div class="col-md-7">
+                       <input class="form-control" name="password" type="password"  pattern = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" [(ngModel)]="newUserSubscribe.password"  formControlName="password"> 
+                       <div class="alert alert-danger" *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+                        <small *ngIf="myForm.controls['password'].hasError('required')">Password is required</small> 
+                        <small *ngIf="myForm.controls['password'].hasError('pattern')">The password contains at least eight characters, at least one letter and one number</small>
+                        </div>                      
+                        </div>
+                      </div>
+
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5">Confirm Password </label>
+                        <div class="col-md-7">
+                        <input class="form-control" name="confpass" type="password" [(ngModel)]="newUserSubscribe.confpass"  formControlName="confpass"> 
+                        <div class="alert alert-danger" *ngIf="myForm.controls['confpass'].invalid && myForm.controls['confpass'].touched">
+                        <small *ngIf="myForm.controls['confpass'].hasError('required')">Confirm password is required</small> 
+                        <small class="alert alert-danger" *ngIf="myForm.controls['password'].value!=myForm.controls['confpass'].value
+                         && myForm.controls['confpass'].dirty">Please give a valid password
+                        </small> 
+                        </div>  
+                                            
+                        </div>
+                      </div>
+
+                      
+                      <div class="form-group row p-1 ">
+                        <label class="col-md-3 form-control-label required ms-5">Role</label>
+                        <div class="col-md-6 form-control-valign">
+                          <label class="radio-inline"> 
+                        
+                                <input class="form-check-input" type="radio" name="user" value="USER" checked    >USER
+                           
+                              </label>&nbsp;&nbsp;
+                          <label class="radio-inline">
+                                <input class="form-check-input" type="radio" name="user" value="ADMIN"  > ADMIN
+                          </label>
+                         </div>
+                         </div>
+                         
+                          <!-- 
+                         <div class="form-group row p-1 ">
+                          <label class="col-md-3 form-control-label required ms-5">Role</label>
+                          <div class="col-md-6 form-control-valign">
+                            <select name="cars" id="cars">
+                              <option value="USER" selected [(ngModel)]="newUserSubscribe.roles">USER</option>
+                              <option value="ADMIN" >ADMIN</option>
+                            </select>
+                           </div>
+                           </div>
+                           -->
+
+                      <div class="form-group row ms-5 me-5 ">
+                        
+                        <div class="form-group row p-1 ">
+
+                            <button class="btn btn-outline-success" [disabled]="myForm.invalid || myForm.controls['password'].value!=myForm.controls['confpass'].value " (click)="addUser()"  >Save</button>&nbsp;
+                            <button class="btn btn-outline-warning" type="reset" >Reset</button>
+                                            
+                        </div>
+                      </div>
+
+                      <h5 class="ms-5">Already have an account ? <a routerLink="/login">Log In! </a></h5> 
+                 
+            </fieldset>
+              </form>
+              
+        </div>
+    </div>
+ </div>
+
+
+ <div class="container">
+  <div class="card shadow mb-4">
+      <div class="card-body">
+          <table class="table table-striped">
+              <thead>
+              <tr> <th>First Name</th><th>Last Name</th> <th>UserName</th> <th>BirthDate</th> <th>Email</th> <th>Role</th> </tr>
+              </thead>
+              <tbody *ngFor="let user of usersubscribe">
+                  <tr >
+                      <td>{{user.firstname}}</td>
+                      <td>{{user.lastname}}</td>
+                      <td>{{user.username}}</td>
+                      <td>{{user.birthdate | date:'dd/MM/yyyy' }}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.roles}}</td>  
+                      <td><a  class="btn btn-danger" >Delete</a></td>
+                      <td><a  class="btn btn-success" >Update</a></td>                              
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

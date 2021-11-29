@@ -10,6 +10,8 @@ import { SubscribeUserComponent } from './ModuleUser/subscribe-user/subscribe-us
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginUserComponent } from './ModuleUser/login-user/login-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashbordForAdminComponent } from './ModuleUser/dashbord-for-admin/dashbord-for-admin.component';
+
 
 
 
@@ -22,6 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     SubscribeUserComponent,
     LoginUserComponent,
+    DashbordForAdminComponent,
+   
 
      
   
