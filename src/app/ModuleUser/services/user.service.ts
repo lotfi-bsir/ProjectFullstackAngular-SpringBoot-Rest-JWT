@@ -34,5 +34,5 @@ export class UserService {
        this.users.splice(index,1);
      }
    }
-}
+} 
  
