@@ -7,4 +7,4 @@ export class UserSubscribe{
     password:String;
     confpass:string;
     roles:string;
- }   
+ }    
