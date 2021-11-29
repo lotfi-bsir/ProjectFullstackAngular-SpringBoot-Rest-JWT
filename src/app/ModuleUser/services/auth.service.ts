@@ -4,7 +4,7 @@ import { UserLogin } from '../models/userlogin';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class AuthService {
 
   users: UserLogin[] = [
