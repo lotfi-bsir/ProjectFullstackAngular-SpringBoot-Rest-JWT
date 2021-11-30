@@ -6,6 +6,7 @@ import { UserSubscribe } from '../models/usersubscribe';
 })
 export class UserService {
   users : UserSubscribe [];
+  user: UserSubscribe;
   constructor() {
    
     this.users = [
@@ -25,6 +26,7 @@ export class UserService {
    }
 
    pushUser(user:UserSubscribe){
+   
        this.users.push(user);
    }
 
@@ -34,5 +36,10 @@ export class UserService {
        this.users.splice(index,1);
      }
    }
+
+   consulterUser( username: string): UserSubscribe  {
+    this.user = this.users.find(u =>u.username == username)
+    return this.user;
+    }
 } 
  
