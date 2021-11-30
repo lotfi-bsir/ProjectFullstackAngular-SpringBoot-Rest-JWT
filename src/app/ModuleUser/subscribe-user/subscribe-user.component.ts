@@ -30,7 +30,7 @@ export class SubscribeUserComponent implements OnInit {
       'roles': new FormControl('',Validators.required),
     })
   }
-
+ 
 addUser(){
      console.log(this.newUserSubscribe);
      this.userService.pushUser(this.newUserSubscribe);
