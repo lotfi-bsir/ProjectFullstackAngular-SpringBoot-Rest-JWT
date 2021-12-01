@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -13,14 +14,14 @@ export class ProductItemComponent implements OnInit {
   @Input() addedToWishlist: boolean = true;
 
   constructor(
-
+    private cartService: CartService,
   ) { }
 
   ngOnInit() {
   }
 
   handleAddToCart() {
-    console.log('added to cart');
+    this.cartService.addProductToCart(this.productItem);
   }
 
   handleAddToWishlist() {

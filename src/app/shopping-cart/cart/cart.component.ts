@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
 import { CartItem } from 'src/app/models/cart-item';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,19 +13,24 @@ export class CartComponent implements OnInit {
 
   cartTotal = 0
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
+    this.loadCartItems();
+    this.calcCartTotal();
   }
 
+
   loadCartItems() {
-      this.calcCartTotal();
+    this.cartItems = this.cartService.getCartItems();
   }
 
   calcCartTotal() {
     this.cartTotal = 0
     this.cartItems.forEach(item => {
-      this.cartTotal += (item.qty  * item.price)
+      this.cartTotal += (item.qty  * item.product.price)
     })
   }
 
